@@ -44,6 +44,10 @@ public:
         std::cout << "Constructed RightAngled" << std::endl;
     }
 
+    ~RightAngled() {
+        std::cout << "Destroyed RightAngled" << std::endl;
+    }
+
     double getHypotenuse() const {
         return std::sqrt(a*a + b*b);
     }
@@ -55,4 +59,19 @@ public:
 
 void task1() {
 
+    RightAngled a = RightAngled();
+
+    std::cout << "Input Cat1 and Cat2 for B: " << std::endl;
+    double cat1,cat2 = 0;
+    std::cin >> cat1 >> cat2;
+    RightAngled b = RightAngled(cat1, cat2);
+
+    std::cout<<"a, side 1: " << a.getFirst() << " ,a - side 2: " << a.getSecond() << std::endl;
+    std::cout << "b, side 1: " << b.getFirst()<<" ,b - side 2: " << b.getSecond() << std::endl;
+
+    std::cout << "Hypotenuse a: " << a.getHypotenuse()<< std::endl;
+    std::cout << "Hypotenuse b: " << b.getHypotenuse() << std::endl;
+
+    std::cout << "Area a: " << a.getArea()<< std::endl;
+    std::cout << "Area b: " << b.getArea()<< std::endl;
 }
